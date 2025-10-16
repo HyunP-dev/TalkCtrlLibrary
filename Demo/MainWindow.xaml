@@ -1,0 +1,38 @@
+﻿<Window x:Class="Demo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Demo"
+        xmlns:component="clr-namespace:TalkCtrlLibrary;assembly=TalkCtrlLibrary"
+        mc:Ignorable="d"
+        Title="Demo" Height="600" Width="400">
+    <Grid>
+        <ScrollViewer Background="#bacee0" >
+            <Grid Margin="10">
+                <StackPanel>
+                    <StackPanel.Resources>
+                        <Style TargetType="{x:Type component:MessageItem}">
+                            <Setter Property="HorizontalAlignment" Value="Left" />
+                        </Style>
+                        <Style TargetType="{x:Type component:RightMessageItem}">
+                            <Setter Property="HorizontalAlignment" Value="Right" />
+                        </Style>
+                        <Style TargetType="{x:Type component:DateBadgeItem}">
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                        </Style>
+                    </StackPanel.Resources>
+                    <component:DateBadgeItem Date="2025. 10. 16"/>
+                    <component:MessageItem Nickname="익명" Message="안녕하세요?" Time="오후 2:40"/>
+                    <component:RightMessageItem Message="안녕하세요?" Time="오후 2:40"/>
+                </StackPanel>
+            </Grid>
+            <ScrollViewer.Resources>
+                <Style TargetType="ScrollBar">
+                    <Setter Property="Background" Value="#95a5b3"/>
+                </Style>
+            </ScrollViewer.Resources>
+
+        </ScrollViewer>
+    </Grid>
+</Window>
